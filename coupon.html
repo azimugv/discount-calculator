@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply Cupon</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <nav>
+        <ul>
+          <li><a href="index.html">30% Off</a></li>
+          <li><a href="coupon.html">50% Coupon</a></li>
+        </ul>
+      </nav>
+      <div class="imgBox">
+        <img src="./image/mouse.jpeg" alt="mouse corsair" class="mouse" />
+      </div>
+
+      <div class="contentBox">
+        <h3>Mouse Corsair M65</h3>
+        <h2 class="price">Price <small id="price">98</small> €</h2>
+        <label for="coupon"
+          ><h3>
+            Coupon :
+            <input
+              type="text"
+              id="coupon"
+              placeholder="Please Enter a Valid Coupon"
+            />
+          </h3>
+        </label>
+        <button href="#" id="off" class="buy" disabled>Apply</button>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("coupon")
+        .addEventListener("keyup", function (event) {
+          const code = event.target.value;
+
+          if (code == "disc50") {
+            document.getElementById("off").removeAttribute("disabled");
+          } else {
+            document.getElementById("off").setAttribute("disabled", true);
+          }
+        });
+      document.getElementById("off").addEventListener("click", function () {
+        const priceContainer = document.getElementById("price");
+        const priceString = priceContainer.innerText;
+        const price = parseFloat(priceString);
+        const newPrice = (price / 100) * 50;
+        priceContainer.style.textDecoration = "line-through";
+        const buyButton = document.getElementById("off");
+        buyButton.innerText = "Please Pay " + newPrice + " €";
+      });
+    </script>
+  </body>
+</html>

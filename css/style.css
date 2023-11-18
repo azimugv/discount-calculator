@@ -5,19 +5,26 @@
   padding: 0;
   font-family: "Istok Web", sans-serif;
 }
-
 body {
+  min-height: 100vh;
+  background: #212121;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: #212121;
 }
-
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+ul li a {
+  color: aliceblue;
+}
 .card {
   position: relative;
   width: 350px;
-  height: 480px;
+  height: 550px;
   background: #191919;
   border-radius: 20px;
   overflow: hidden;
